@@ -3,5 +3,6 @@
 stow -t ~ zsh
 stow -t ~ neovim
 stow -t ~ fonts
+stow -t ~ code
 
 dconf load / < gnome/dconf.conf

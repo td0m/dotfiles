@@ -1,0 +1,13 @@
+{
+    "editor.fontFamily": "'FuraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "GitHub Light",
+    "window.zoomLevel": 0,
+    "rust-client.engine": "rust-analyzer",
+    "sqltools.useNodeRuntime": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.useLanguageServer": true,
+    "vscode-neovim.neovimPath": "/usr/bin/nvim"
+}
