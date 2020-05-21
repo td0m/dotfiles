@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mkdir gnome
+dconf dump / > gnome/dconf.conf

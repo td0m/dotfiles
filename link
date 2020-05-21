@@ -1,0 +1,7 @@
+#/bin/bash
+
+stow -t ~ zsh
+stow -t ~ neovim
+stow -t ~ fonts
+
+dconf load / < gnome/dconf.conf
