@@ -94,6 +94,8 @@ if !exists('g:vscode')
     " Color themes
     Plug 'arzg/vim-colors-xcode'
     Plug 'tomasiser/vim-code-dark'
+    Plug 'dunstontc/vim-vscode-theme'
+    Plug 'mhartington/oceanic-next'
 
     " Language Server
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -296,7 +298,9 @@ if !exists('g:vscode')
     set termguicolors
   endif
 
-  colorscheme xcodedarkhc
+  "colorscheme xcodedarkhc
+  colorscheme dark_plus
+  
   "let g:lightline = {
     "\ 'colorscheme': 'codedark',
   "\ }

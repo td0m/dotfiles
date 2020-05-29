@@ -1,20 +1,101 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-    {
-        "key": "alt+t",
-        "command": "workbench.panel.terminal.focus"
-    },
-    {
-        "key": "alt+e",
-        "command": "workbench.files.action.focusOpenEditorsView",
-        "when": "workbench.explorer.openEditorsView.active"
-    },
-    {
-        "key": "alt+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "alt+t",
-        "command": "workbench.action.terminal.toggleTerminal"
-    }
+	// remove some defaults
+	{
+		"key": "ctrl+k",
+		"command": "-extension.vim_ctrl+k",
+		"when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "-vscode-neovim.send",
+		"when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+	},
+	{
+		"key": "ctrl+shift+g",
+		"command": "-workbench.view.scm"
+	},
+	{
+		"key": "ctrl+shift+x",
+		"command": "-workbench.view.extensions"
+	},
+	{
+		"key": "ctrl+shift+f",
+		"command": "-workbench.action.findInFiles"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-editor.action.startFindReplaceAction"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "-extension.vim_ctrl+h",
+		"when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+	},
+	// config
+	{
+		"key": "alt+t",
+		"command": "workbench.panel.terminal.focus"
+	},
+	{
+		"key": "alt+f",
+		"command": "workbench.files.action.focusOpenEditorsView",
+		"when": "workbench.explorer.openEditorsView.active"
+	},
+	{
+		"key": "alt+h",
+		"command": "workbench.action.closeSidebar"
+	},
+	{
+		"key": "alt+t",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "alt+shift+t",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "alt+s",
+		"command": "workbench.action.findInFiles"
+	},
+	{
+		"key": "ctrl+h",
+		"command": "workbench.action.focusLeftGroup"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "workbench.action.focusRightGroup"
+	},
+	{
+		"key": "ctrl+j",
+		"command": "workbench.action.focusAboveGroup"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "workbench.action.focusBelowGroup"
+	},
+	{
+		"key": "alt+g",
+		"command": "workbench.view.scm"
+	},
+	{
+		"key": "alt+x",
+		"command": "workbench.view.extensions"
+	},
+	{
+		"key": "alt+r",
+		"command": "workbench.action.openRecent"
+	},
+	{
+		"key": "ctrl+r",
+		"command": "-workbench.action.openRecent"
+	},
+	{
+		"key": "alt+m",
+		"command": "workbench.action.tasks.runTask"
+	},
+	{
+		"key": "ctrl+g p",
+		"command": "git.pushTo"
+	},
 ]
