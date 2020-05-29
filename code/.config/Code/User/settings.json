@@ -1,13 +1,24 @@
 {
-    "editor.fontFamily": "'FuraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 15,
-    "editor.fontLigatures": true,
-    "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "GitHub Light",
-    "window.zoomLevel": 0,
-    "rust-client.engine": "rust-analyzer",
-    "sqltools.useNodeRuntime": true,
-    "go.autocompleteUnimportedPackages": true,
-    "go.useLanguageServer": true,
-    "vscode-neovim.neovimPath": "/usr/bin/nvim"
+	// Theming
+	"editor.fontFamily": "'BlexMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+	"workbench.colorTheme": "GitHub Dark",
+	"workbench.iconTheme": "material-icon-theme",
+	// Personal defaults
+	"editor.tabSize": 2,
+	"editor.fontLigatures": true,
+	"editor.lineNumbers": "relative",
+	"editor.fontSize": 16,
+	"window.menuBarVisibility": "toggle",
+	"window.zoomLevel": 0,
+	"explorer.confirmDragAndDrop": false,
+	"explorer.confirmDelete": false,
+	"editor.renderWhitespace": "all",
+	// Go
+	"go.useLanguageServer": true,
+	"go.formatTool": "goimports",
+	// Enable Neovim
+	"vim.enableNeovim": true,
+	"vim.neovimPath": "/usr/bin/nvim",
+	// Rust
+	"rust-client.engine": "rust-analyzer",
 }
