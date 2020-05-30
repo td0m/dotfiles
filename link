@@ -5,6 +5,7 @@ stow -t ~ neovim
 stow -t ~ fonts
 stow -t ~ code
 stow -t ~ neovim
+stow -t ~ emacs
 
 sudo stow -t / scripts
 
