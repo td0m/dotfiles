@@ -1,125 +1,42 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
-	// remove some defaults
-	{
-		"key": "ctrl+r",
-		"command": "-workbench.action.openRecent"
-	},
-	{
-		"key": "ctrl+shift+p",
-		"command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
-		"when": "inFilesPicker && inQuickOpen"
-	},
-	{
-		"key": "ctrl+p",
-		"command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-		"when": "inFilesPicker && inQuickOpen"
-	},
-	{
-		"key": "ctrl+n",
-		"command": "-workbench.action.files.newUntitledFile"
-	},
-	{
-		"key": "ctrl+k",
-		"command": "-extension.vim_ctrl+k",
-		"when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
-	},
-	{
-		"key": "ctrl+k",
-		"command": "-vscode-neovim.send",
-		"when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
-	},
-	{
-		"key": "ctrl+shift+g",
-		"command": "-workbench.view.scm"
-	},
-	{
-		"key": "ctrl+shift+x",
-		"command": "-workbench.view.extensions"
-	},
-	{
-		"key": "ctrl+shift+f",
-		"command": "-workbench.action.findInFiles"
-	},
-	{
-		"key": "ctrl+h",
-		"command": "-editor.action.startFindReplaceAction"
-	},
-	{
-		"key": "ctrl+h",
-		"command": "-extension.vim_ctrl+h",
-		"when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
-	},
-	// config
-	{
-		"key": "alt+t",
-		"command": "workbench.panel.terminal.focus"
-	},
-	{
-		"key": "alt+f",
-		"command": "workbench.files.action.focusOpenEditorsView",
-		"when": "workbench.explorer.openEditorsView.active"
-	},
-	{
-		"key": "alt+h",
-		"command": "workbench.action.closeSidebar"
-	},
-	{
-		"key": "alt+t",
-		"command": "workbench.action.terminal.toggleTerminal"
-	},
-	{
-		"key": "alt+shift+t",
-		"command": "workbench.action.terminal.new"
-	},
-	{
-		"key": "alt+s",
-		"command": "workbench.action.findInFiles"
-	},
-	{
-		"key": "ctrl+h",
-		"command": "workbench.action.focusLeftGroup"
-	},
-	{
-		"key": "ctrl+l",
-		"command": "workbench.action.focusRightGroup"
-	},
-	{
-		"key": "ctrl+j",
-		"command": "workbench.action.focusAboveGroup"
-	},
-	{
-		"key": "ctrl+k",
-		"command": "workbench.action.focusBelowGroup"
-	},
-	{
-		"key": "alt+g",
-		"command": "workbench.view.scm"
-	},
-	{
-		"key": "alt+x",
-		"command": "workbench.view.extensions"
-	},
-	{
-		"key": "alt+r",
-		"command": "workbench.action.openRecent"
-	},
-	{
-		"key": "alt+m",
-		"command": "workbench.action.tasks.runTask"
-	},
-	{
-		"key": "ctrl+g p",
-		"command": "git.pushTo"
-	},
-	{
-		"key": "ctrl+k",
-		"command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
-		"when": "inFilesPicker && inQuickOpen"
-	},
-	{
-		"key": "ctrl+j",
-		"command": "workbench.action.quickOpenNavigateNextInFilePicker",
-		"when": "inFilesPicker && inQuickOpen"
-	},
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "list.collapse",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "list.expand",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
+    }
 ]
