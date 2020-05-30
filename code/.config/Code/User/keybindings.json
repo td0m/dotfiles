@@ -38,5 +38,35 @@
         "key": "ctrl+k",
         "command": "list.focusUp",
         "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "alt+s",
+        "command": "workbench.action.closeSidebar"
+    },
+    {
+        "key": "alt+x",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "alt+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "alt+shift+t",
+        "command": "workbench.action.terminal.new"
+    },
+    // disable defaults to enforce better practices
+    {
+        "key": "ctrl+shift+p",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
     }
 ]
