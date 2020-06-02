@@ -1,5 +1,16 @@
 #/bin/bash
 
+git config --global user.name "Dominik Tarnowski"
+git config --global user.email "dom@tdom.dev"
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+cd ..
+
+sudo yay -S neovim zsh nerd-fonts-fira-code code stow
+
 # oh my zsh (zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
