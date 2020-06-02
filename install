@@ -9,7 +9,7 @@ makepkg -si
 
 cd ..
 
-sudo yay -S neovim zsh nerd-fonts-fira-code code stow
+sudo yay -S neovim zsh nerd-fonts-fira-code code stow noto-fonts-emoji
 
 # oh my zsh (zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
