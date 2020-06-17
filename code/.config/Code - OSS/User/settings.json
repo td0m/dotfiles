@@ -4,17 +4,17 @@
 	// Theming
 	"editor.fontFamily": "'FuraCode Nerd Font', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
 	"workbench.iconTheme": "material-icon-theme",
-	"workbench.colorTheme": "GitHub Dark",
+	"workbench.colorTheme": "Gruvbox Dark Medium",
 	// Personal defaults
 	"editor.tabSize": 2,
 	"editor.fontLigatures": true,
 	"editor.lineNumbers": "relative",
-	"editor.fontSize": 16,
-	"window.menuBarVisibility": "toggle",
-	"window.zoomLevel": 0,
+	"editor.fontSize": 15,
+	"window.menuBarVisibility": "default",
+	"window.zoomLevel": 1,
 	"explorer.confirmDragAndDrop": false,
 	"explorer.confirmDelete": false,
-	"editor.renderWhitespace": "all",
+	"editor.renderWhitespace": "boundary",
 	"workbench.activityBar.visible": true,
 	// Go
 	"go.useLanguageServer": true,
@@ -69,5 +69,6 @@
 		{ "before": [ "j", "k"], "after": [ "<Esc>" ] }
 	],
 	"vim.easymotion": true,
-	"vim.useSystemClipboard": true
+	"vim.useSystemClipboard": true,
+	"latex-workshop.view.pdf.viewer": "tab"
 }
