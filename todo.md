@@ -1,0 +1,12 @@
+ - [ ] keymap uk
+ - [x] audio controls
+ - [x] brightness controls
+ - [ ] firefox on wayland
+ - [ ] add alacritty config
+ - [x] waybar
+ - [x] screenshots
+ - [x] shortcut to toggle mute
+ - [x] display on the right side
+ - [ ] emacs
+ - [ ] split sway config to diff files
+ - [ ] lock screen

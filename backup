@@ -1,6 +1,3 @@
 #!/bin/bash
 
-mkdir -p gnome
-dconf dump / > gnome/dconf.conf
-
 code --list-extensions > .code-extensions
