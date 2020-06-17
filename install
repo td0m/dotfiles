@@ -7,10 +7,9 @@ if ! [ -x "$(command -v yay)" ]; then
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
+  cd ..
+  rm -rf yay
 fi
-
-cd ..
-rm -rf yay
 
 yay -S neovim zsh nerd-fonts-fira-code code stow noto-fonts-emoji
 
