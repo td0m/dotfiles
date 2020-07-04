@@ -13,6 +13,9 @@ fi
 
 yay -S neovim zsh nerd-fonts-fira-code code stow noto-fonts-emoji
 
+sudo systemctl enable systemd-timesyncd.service
+timedatectl set-ntp true
+
 # oh my zsh (zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
