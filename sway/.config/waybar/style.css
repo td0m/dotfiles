@@ -3,7 +3,7 @@
   border-radius: 0;
   font-family: "FuraCode Nerd Font", monospace;
   /* physical measure to keep the bar similar height on both monitors */
-  font-size: 15px;
+  font-size: 17px;
   min-height: 0;
   padding: 0.7px 1px;
 }
