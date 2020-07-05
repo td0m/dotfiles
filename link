@@ -7,6 +7,7 @@ stow -t ~ code
 stow -t ~ neovim
 stow -t ~ emacs
 stow -t ~ sway
+stow -t ~ tmux
 
 sudo chmod +x scripts/usr/bin/*
 sudo stow -t / scripts
