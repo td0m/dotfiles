@@ -1,0 +1,14 @@
+[custom0]
+binding='<Super>space'
+command='gnome-terminal'
+name='Terminal'
+
+[custom1]
+binding='<Super>e'
+command='nautilus'
+name='Files'
+
+[custom3]
+binding='<Super>t'
+command='snap run todoist'
+name='Todoist'

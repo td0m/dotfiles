@@ -1,0 +1,125 @@
+#!/bin/bash
+
+DIR=`dirname "$(readlink -f "$0")"`
+
+red=`tput setaf 1`
+green=`tput setaf 2`
+yellow=`tput setaf 3`
+blue=`tput setaf 4`
+reset=`tput sgr0`
+
+cmd() {
+  command -v $1 > /dev/null 2>&1
+}
+
+error() {
+  echo "${red}${*}${reset}"
+  exit
+}
+
+log() {
+  echo "${green}${*}${reset}"
+}
+
+warn() {
+  echo "${yellow}${*}${reset}"
+}
+
+require() {
+  for c in "$@"; do
+    if ! cmd $c; then
+      error "'$c' required, but not installed."
+    fi
+  done
+}
+
+yn() {
+  read -p "$1 (Y/n)? " choice
+  case "$choice" in 
+    y|Y ) return 0;;
+    n|N ) return 1;;
+    * ) return 0;;
+  esac
+}
+
+anykey() {
+  read -n 1 -s -r -p "$@"
+}
+
+option() {
+  group=$1
+  if yn "${blue}$group${reset}"; then
+    shift
+    for c in "$@"; do
+      if ! cmd $c; then
+        anykey "Please install ${yellow}'$c'${reset}. press any key when installed."
+        echo
+        source ~/.bashrc
+      fi
+    done
+    require "$@"
+    return 0
+  else
+    return 1
+  fi
+}
+
+install() {
+  require stow
+
+  # TODO: make TARGET directories if not exist
+  link() {
+    FILE="$DIR/$1"
+    TARGET="$2"
+    if [ `realpath $TARGET` != "$FILE" ]; then
+      if [ -f "$TARGET" ]; then
+        anykey "File '${yellow}$TARGET${reset}' already exists. Make sure to back it up if you want and press any key to continue. "
+        echo
+        rm -rf $TARGET
+      fi
+      ln -s $FILE $TARGET
+    fi
+  }
+
+  if option VsCode code; then
+      log "Installing extensions"
+      # VsCode takes a while to check and install already installed extensions
+      # this is just a faster version of: cat vscode/extensions.txt | xargs -L 1 code --install-extension
+      VSCODE_INSTALLED=`code --list-extensions`
+      for ext in `cat vscode/extensions.txt`; do
+        if [[ "$VSCODE_INSTALLED" == *"$ext"* ]]; then
+          echo -n ""
+        else
+          echo "installing '$ext'"
+          code --install-extension $ext >/dev/null
+        fi
+      done
+      log "Replacing settings, files, and keybindings"
+      link vscode/settings.json ~/.config/Code/User/settings.json
+      link vscode/keybindings.json ~/.config/Code/User/keybindings.json
+      link vscode/snippets ~/.config/Code/User/snippets
+  fi
+
+  if option Gnome dconf; then
+    log "Loading dconf configuration."
+    dconf load '/org/gnome/desktop/wm/keybindings/' < gnome/keybindings.dconf
+    dconf load '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' < gnome/custom-keybindings.dconf
+  fi
+}
+
+backup() {
+  if option Gnome dconf; then
+    log "Saving dconf configuration."
+    dconf dump '/org/gnome/desktop/wm/keybindings/' > gnome/keybindings.dconf
+    dconf dump '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/' > gnome/custom-keybindings.dconf
+  fi
+  if option VsCode code; then
+    code --list-extensions > vscode/extensions.txt
+  fi
+}
+
+if [ "$1" == "backup" ]; then
+  backup
+else
+  install
+fi
