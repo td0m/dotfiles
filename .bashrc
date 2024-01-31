@@ -14,8 +14,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 
 # zoom!
 j() { cd $(find ${1:-.} -type d | fzf); }
-p() { cd ~/p && cd $(find . -type d -maxdepth 1 | fzf); }
-# alias e='nvim "$(fzf)"'
-alias b='nvim "$(nnn -H -p -)"'
-alias vid='git diff --name-only | xargs nvim'
+p() { cd ~/p && cd $(find . -maxdepth 1 -type d | fzf); }
 
+alias dv='git diff --name-only | xargs nvim'
+alias lg="lazygit"
