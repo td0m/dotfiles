@@ -1,0 +1,37 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Dominik Tarnowski
+	email = dom@tdom.dev
+[core]
+	excludesfile = /Users/dom/.gitignore
+[push]
+	autoSetupRemote = true
+[alias]
+	b = branch
+	l = log --oneline -n 20 --date=format:'%Y-%m-%d %H:%M' --pretty=format:'%C(cyan)%h%Creset%C(auto)%d %s - %ar'
+	s = status --short --branch
+	ch = checkout
+	c = commit
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+[github]
+	user = td0m
+[url "git@github.com:"]
+	insteadOf = https://github.com/
