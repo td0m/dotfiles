@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+# usage: "emso psql -U zima" to print stdin as well as the output prefixed by the $mark.
+# Credit: https://www.youtube.com/watch?v=xUDtQehcoDo
+
+sh="${@:-bash}"
+inp="$(cat)"
+mark="👉"
+printf "%s\n" "$inp" | grep -v "^$mark"
+printf "%s\n" "$inp" | grep -v "^$mark" | $sh 2>&1 | sed "s/^/$mark/"
