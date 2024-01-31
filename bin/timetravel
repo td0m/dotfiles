@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# usage: 'timetravel HEAD~1 yesterday 11:12:13'
+
+ref="$1"
+shift
+d="$(date -d "$*")"
+
+export GIT_COMMITTER_DATE="$d"
+export GIT_AUTHOR_DATE="$d"
+
+git rebase "$ref" --exec "git commit --amend --reset-author --no-edit"
