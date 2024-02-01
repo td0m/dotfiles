@@ -4,6 +4,10 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.netrw_banner = false
+vim.g.netrw_list_hide = [[^\.\.\=/\=$]]
+
+vim.g.wildcharm = "<C-z>" -- allows to have tab in mappings
+
 vim.wo.number = true
 vim.wo.relativenumber = true
 
@@ -324,3 +328,5 @@ vim.keymap.set("n", "<leader>r", require("telescope.builtin").live_grep)
 vim.keymap.set("n", "<leader>S", require("telescope.builtin").spell_suggest)
 
 require("nvim-surround").setup()
+vim.keymap.set("n", "<leader>.", ":Explore<CR>")
+vim.keymap.set("n", "<leader>u", ":e %<<C-z>")
