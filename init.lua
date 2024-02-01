@@ -1,4 +1,12 @@
-vim.cmd.syntax("off")
+-- disable syntax highlighting everywhere but in netrw
+-- why? netrw marks are visual and actually rather helpful
+vim.cmd.syntax("on")
+vim.api.nvim_create_autocmd('BufReadPost', {
+	pattern = { "*" },
+	callback = function(_)
+		vim.cmd[[set syntax="off"]]
+	end
+})
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
