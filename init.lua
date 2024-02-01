@@ -3,6 +3,7 @@ vim.cmd.syntax("off")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.netrw_banner = false
 vim.wo.number = true
 vim.wo.relativenumber = true
 
