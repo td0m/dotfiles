@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 # usage: 'timetravel HEAD~1 yesterday 11:12:13'
 
+datecmd="date"
+if [ "$(uname)" == "Darwin" ]; then
+	datecmd="gdate"
+fi
+
 ref="$1"
 shift
-d="$(date -d "$*")"
+
+d="$("$datecmd" -d "$*")"
 
 export GIT_COMMITTER_DATE="$d"
 export GIT_AUTHOR_DATE="$d"
