@@ -223,7 +223,7 @@ configs.setup({
 	ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "typescript", "html" },
 	sync_install = false,
 	highlight = { enable = false },
-	indent = { enable = true },
+	indent = { enable = false },
 })
 
 local gs = require("gitsigns")
