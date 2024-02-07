@@ -1,1 +1,12 @@
+-- no startup message
+\set QUIET
+
 \timing on
+\set HISTFILE ~/.psql_history- :DBNAME
+\set COMP_KEYWORD_CASE upper
+\x auto
+\pset null 👻
+
+\set ulike 'SELECT id, email from users where email like '
+
+\unset QUIET
