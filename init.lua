@@ -179,7 +179,6 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_user_command('X', function(input)
-	vim.print(input)
 	vim.keymap.set(
 		"n",
 		"<leader> ",
@@ -202,6 +201,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	{ 'tpope/vim-abolish' },
 	{ 'navarasu/onedark.nvim' },
 	{ "neovim/nvim-lspconfig" },
 	{ "godlygeek/tabular" },
