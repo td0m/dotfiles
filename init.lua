@@ -70,7 +70,6 @@ vim.keymap.set("n", "[b", ":bp<cr>", { silent = true })
 vim.keymap.set("n", "]b", ":bn<cr>", { silent = true })
 vim.keymap.set("n", "[c", ":cprev<cr>", { silent = true })
 vim.keymap.set("n", "]c", ":cnext<cr>", { silent = true })
-vim.keymap.set("n", "<leader>o", ":only<cr>", { silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
