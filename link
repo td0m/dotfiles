@@ -1,0 +1,13 @@
+mkdir -p ~/.config/kitty
+mkdir -p ~/.config/tmux
+mkdir -p ~/.config/nvim
+
+ln -s $(pwd)/bin ~/bin
+ln -s $(pwd)/.bashrc ~/.bashrc
+ln -s $(pwd)/.sqliterc ~/.sqliterc
+ln -s $(pwd)/.psqlrc ~/.psqlrc
+ln -s $(pwd)/.gitconfig ~/.gitconfig
+ln -s $(pwd)/.gitignore ~/.gitignore
+ln -s $(pwd)/kitty.conf ~/.config/kitty/kitty.conf
+ln -s $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
+ln -s $(pwd)/init.lua ~/.config/nvim/init.lua

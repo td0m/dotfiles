@@ -1,0 +1,33 @@
+disable password requirement in /etc/sudoers
+
+sudo apt install -y git tmux wl-clipboard curl ripgrep fzf nnn mpv usbutils rsync tree ncdu tldr pandoc kitty openssh-server nodejs aerc abook fd-find vim gcc obs-studio
+
+# stable debian version is too outdated...
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux64.tar.gz
+export PATH="$PATH:/opt/nvim-linux64/bin"
+
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+
+please please disable password login:
+sudo nvim /etc/ssh/sshd_config
+
+sudo systemctl enable ssh --now
+
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak install -y flathub org.gnome.World.Secrets
+
+conf: .abook, .config/aerc, .gnupg
+
+curl -fsSL https://tailscale.com/install.sh | sh
+https://tailscale.com/download/linux/debian-bullseye
+
+curl -LO https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb
+sudo dpkg -i bottom_0.9.6_amd64.deb
