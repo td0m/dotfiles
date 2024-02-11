@@ -1,12 +1,6 @@
 -- disable syntax highlighting everywhere but in netrw
 -- why? netrw marks are visual and actually rather helpful
 vim.cmd.syntax("on")
-vim.api.nvim_create_autocmd('BufReadPost', {
-	pattern = { "*" },
-	callback = function(_)
-		vim.cmd[[set syntax="off"]]
-	end
-})
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -69,8 +63,7 @@ vim.keymap.set("n", "<BS>", ":b#<CR>")
 vim.keymap.set("n", "<leader>c", ':copen<cr>', { silent = true })
 
 vim.keymap.set("n", "<leader>E", function()
-	vim.cmd.cd('~/.config/nvim')
-	vim.cmd.e('init.lua')
+	vim.cmd.e('~/.config/nvim/init.lua')
 end, { silent = true })
 
 vim.keymap.set("n", "[b", ":bp<cr>", { silent = true })
@@ -224,6 +217,7 @@ require("lazy").setup({
 
 require("onedark").setup { style = "darker" }
 vim.cmd.colorscheme("onedark")
+vim.o.background = "light"
 
 local configs = require("nvim-treesitter.configs")
 ---@diagnostic disable-next-line: missing-fields
