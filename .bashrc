@@ -12,9 +12,9 @@ export PATH="$PATH:$HOME/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="/opt/homebrew/bin:$PATH"
 
-# zoom!
-j() { cd $(find ${1:-.} -type d | fzf); }
-p() { cd ~/p && cd $(find . -maxdepth 1 -type d | fzf); }
+eval "$(zoxide init bash)"
 
 alias dv='git diff --name-only | xargs nvim'
 alias lg="lazygit"
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
