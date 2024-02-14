@@ -327,8 +327,14 @@ require("telescope").load_extension("ui-select")
 
 vim.keymap.set("n", "<leader>t", require("telescope.builtin").find_files)
 vim.keymap.set("n", "<leader>r", require("telescope.builtin").live_grep)
-vim.keymap.set("n", "<leader>S", require("telescope.builtin").spell_suggest)
 
 require("nvim-surround").setup()
 vim.keymap.set("n", "<leader>.", ":Explore<CR>")
 vim.keymap.set("n", "<leader>u", ":e %<<C-z>")
+
+local espeak = 'espeak -s 150 --punct -k 1'
+
+vim.keymap.set('n', '<leader>l', ':.w !setsid -f '..espeak..'<cr><cr>')
+vim.keymap.set('n', '<leader>l', ':.w !setsid -f '..espeak..'<cr><cr>')
+
+vim.keymap.set('n', '<leader>u', ':!pkill -9 espeak<CR><CR>')
