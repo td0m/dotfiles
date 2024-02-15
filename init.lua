@@ -31,9 +31,6 @@ vim.wo.wrap = false
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 
-vim.keymap.set("v", "<", "<gv")
-vim.keymap.set("v", ">", ">gv")
-
 vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { silent = true })
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { silent = true })
 
