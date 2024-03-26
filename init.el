@@ -77,11 +77,18 @@
   "Advises `compile' so it sets the argument COMINT to t."
   (ad-set-arg 1 t))
 
-(defun recompile-quietly ()
-  "Re-compile without changing the window configuration."
-  (interactive)
-  (save-window-excursion
-    (recompile)))
+(defcustom recompile-silently nil
+  "If non-nil then `recompile' won't change the window configuration."
+  :type 'boolean)
+
+(defun my/recompile (fn &rest args)
+  "Re-compile with the option to prevent changing the window configuration."
+  (if recompile-silently
+      (save-window-excursion
+        (apply fn args))
+    (apply fn args)))
+
+(advice-add 'recompile :around #'my/recompile)
 
 (defun compile-on-save-start ()
   (let ((buffer (compilation-find-buffer)))
